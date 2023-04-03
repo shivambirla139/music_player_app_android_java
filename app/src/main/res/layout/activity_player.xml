@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerActivity"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@drawable/p3">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5.5"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/txtSong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Song name wil djfidbifdbfiubdiufbusbfibisiudbfibe herer"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            android:layout_margin="20dp"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:ellipsize="marquee"
+            />
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/songImg"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@drawable/p2" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:elevation="8dp"
+                android:layout_centerInParent="true" />
+            <TextView
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/seekBar"
+                android:layout_width="wrap_content"
+                android:text="5:15"
+                android:id="@+id/endTime"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/startTime"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                android:text="0:1"
+                android:textSize="20sp"
+                android:layout_toLeftOf="@id/seekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/btnPause"
+                android:background="@drawable/baseline_pause_24"
+                android:layout_centerInParent="true"
+                />
+            <Button
+                android:id="@+id/btnFastForward"
+                android:layout_toRightOf="@id/btnPause"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/baseline_fast_forward_24"
+                android:layout_centerVertical="true"
+                />
+            <Button
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/baseline_skip_next_24"
+                    android:layout_toRightOf="@id/btnFastForward"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/btnNext"
+                    />
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_toLeftOf="@id/btnPause"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/btnPause"
+                android:background="@drawable/baseline_fast_rewind_24"
+                android:id="@+id/btnFastRewind"
+                />
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/baseline_skip_previous_24"
+                android:layout_toStartOf="@id/btnFastRewind"
+                android:layout_centerVertical="true"
+                android:id="@+id/btnPrevious"
+                />
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:gravity="center"
+        >
+
+
+        <com.gauravk.audiovisualizer.visualizer.BlastVisualizer
+            xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/wave"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            custom:avDensity="0.4"
+            android:layout_alignParentEnd="true"
+            custom:avType="fill"
+            android:layout_alignParentBottom="true"
+            custom:avColor="@color/av_dark_blue"
+            custom:avSpeed="normal"/>
+    </LinearLayout>
+</LinearLayout>
